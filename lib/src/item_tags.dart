@@ -185,6 +185,7 @@ class _ItemTagsState extends State<ItemTags> {
       //print("replace");
       _dataListInherited.list[widget.index] = DataList(
           title: widget.title,
+          index: widget.index,
           active: widget.singleItem ? false : widget.active,
           customData: widget.customData);
     }
@@ -439,6 +440,7 @@ class _ItemTagsState extends State<ItemTags> {
   /// Single item selection
   void _singleItem(DataListInherited dataSetIn, DataList dataSet) {
     dataSetIn.list
+        .where((tg) => tg != null)
         .where((tg) => tg.active)
         .where((tg2) => tg2 != dataSet)
         .forEach((tg) => tg.active = false);

@@ -179,14 +179,14 @@ class _ItemTagsState extends State<ItemTags> {
           DataList(
               title: widget.title,
               index: widget.index,
-              active: widget.singleItem ? false : widget.active,
+              active: widget.active,
               customData: widget.customData));
     } else if (_dataListInherited.list.elementAt(widget.index) == null) {
       //print("replace");
       _dataListInherited.list[widget.index] = DataList(
           title: widget.title,
           index: widget.index,
-          active: widget.singleItem ? false : widget.active,
+          active: widget.active,
           customData: widget.customData);
     }
 
